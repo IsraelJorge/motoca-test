@@ -1,4 +1,7 @@
 import type { Preview } from '@storybook/react'
+import { withRouter } from 'storybook-addon-remix-react-router'
+
+import { DialogProvider } from '@/contexts/dialog-context'
 
 import '@/styles/global.css'
 
@@ -11,6 +14,14 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <DialogProvider>
+        <Story />
+      </DialogProvider>
+    ),
+    withRouter,
+  ],
 }
 
 export default preview

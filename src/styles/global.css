@@ -1,29 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #0a0a0a;
+    --background: #2a233c;
+    --foreground: #312d4b;
     --card: #ffffff;
     --card-foreground: #0a0a0a;
     --popover: #ffffff;
     --popover-foreground: #0a0a0a;
-    --primary: #0055ff;
+    --primary: #8c57ff;
     --primary-foreground: #f5faff;
-    --secondary: #f5f7ff;
+    --secondary: #3badfb;
     --secondary-foreground: #1a1b1f;
-    --muted: #f5f7ff;
+    --muted: #cac9cd;
     --muted-foreground: #71767f;
-    --accent: #f5f7ff;
+    --accent: #e7e3fc;
     --accent-foreground: #1a1b1f;
-    --destructive: #ff3b30;
     --destructive-foreground: #f5faff;
-    --border: #e2e8ff;
-    --input: #e2e8ff;
-    --ring: #0055ff;
+    --border: #cac9cd;
+    --input: #cac9cd;
+    --ring: #8c57ff;
     --radius: 0.5rem;
+    --success: #56ca00;
+    --success-foreground: #354546;
+    --destructive: #ff4c51;
+    --destructive-foreground: #55304c;
+    --warning: #ffb400;
+    --warning-foreground: #544146;
   }
 
   .dark {
@@ -54,6 +61,26 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-poppins text-muted;
   }
+  h1 {
+    @apply text-2xl font-semibold text-muted;
+  }
+  span {
+    @apply line-clamp-1 block align-middle;
+  }
+}
+
+.input-root {
+  @apply relative;
+}
+
+.input-root.input-error input,
+.select-root.select-error button {
+  @apply border-2 border-destructive focus:border-destructive focus:ring-destructive focus-visible:ring-destructive;
+}
+
+.input-root input:is(:focus, :not(:placeholder-shown)) + label,
+.select-root button:not([data-placeholder]) .label-custom {
+  @apply -top-2 translate-y-0 text-xs;
 }

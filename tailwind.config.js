@@ -17,6 +17,14 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      fontSize: {
+        base: '0.938rem',
+        lg: '1.063rem',
+        '2xl': '1.563rem',
+      },
       colors: {
         border: 'var(--border)',
         input: 'var(--input)',
@@ -50,6 +58,14 @@ module.exports = {
         card: {
           DEFAULT: 'var(--card)',
           foreground: 'var(--card-foreground)',
+        },
+        success: {
+          DEFAULT: 'var(--success)',
+          foreground: 'var(--success-foreground)',
+        },
+        warning: {
+          DEFAULT: 'var(--warning)',
+          foreground: 'var(--warning-foreground)',
         },
       },
       borderRadius: {
